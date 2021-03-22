@@ -112,9 +112,9 @@ spec:
 #      minAvailable: 0
     volumeSpec:
 #      emptyDir: {}
-#      hostPath:
-#        path: /data
-#        type: Directory
+      hostPath:
+        path: /data/mysql
+        type: Directory
       persistentVolumeClaim:
 #        storageClassName: standard
 #        accessModes: [ "ReadWriteOnce" ]
@@ -160,10 +160,10 @@ spec:
 #      iam.amazonaws.com/role: role-arn
 #    labels:
 #      rack: rack-22
-#    serviceType: ClusterIP
-#    externalTrafficPolicy: Cluster
-#    replicasServiceType: ClusterIP
-#    replicasExternalTrafficPolicy: Cluster
+    serviceType: ClusterIP
+    externalTrafficPolicy: Local
+    replicasServiceType: ClusterIP
+    replicasExternalTrafficPolicy: Local
 #    runtimeClassName: image-rc
 #    sidecars:
 #    - image: busybox
